@@ -38,6 +38,15 @@
 //   color: $color;
 // }
 
+@mixin heading-sm($color: $color-black) {
+  font-family: $font-family;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: $color;
+}
+
 @mixin heading-xs($color: $color-black) {
   font-family: $font-family;
   text-transform: uppercase;
@@ -59,4 +68,63 @@
   font-weight: 500;
   line-height: 1.67;
   color: $color;
+}
+
+// --- Buttons ---
+
+@mixin button-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 16rem;
+  height: 4.8rem;
+  border-radius: unset;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $font-family;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: $transition-normal;
+}
+
+@mixin button-solid-dark {
+  @include button-base;
+
+  background-color: $color-black;
+  color: $color-white;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #4c4c4c;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #4c4c4c;
+    outline-offset: 4px;
+  }
+}
+
+@mixin button-outline-dark {
+  @include button-base();
+
+  border: 1px solid $color-black;
+  background-color: transparent;
+  color: $color-black;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-black;
+    color: $color-white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+    outline-offset: 4px;
+  }
 }

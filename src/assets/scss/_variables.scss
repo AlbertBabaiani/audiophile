@@ -35,7 +35,7 @@ $max-width-desktop: 795px;
   --px: #{$px-sm};
   --py: #{$py-sm};
 
-  @media (min-width: #{$breakpoint-mobile}) {
+  @media (min-width: #{$breakpoint-tablet}) {
     --px: #{$px-md};
     --py: #{$py-md};
   }
