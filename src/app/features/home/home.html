@@ -1,10 +1,10 @@
 <section class="categories">
-  @for (category of categories(); track $index) {
+  @for (category of categories(); track category.title) {
     <div class="category">
       <img
         class="category-thumbnail"
         [src]="category.thumbnailUrl"
-        alt="{{ category.title }} category thumbnail"
+        [alt]="category.title + ' category thumbnail'"
       />
       <h2 class="category-title">{{ category.title }}</h2>
       <a [routerLink]="category.link" class="category-link"
