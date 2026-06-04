@@ -13,3 +13,43 @@ $color-light-black: #101010;
 // --- Typography ---
 
 $font-family: 'Manrope', sans-serif;
+
+// --- Responsive Breakpoints ---
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1440px;
+
+// --- Layout ---
+
+$px-sm: 2.4rem;
+$px-md: 3.9rem;
+$px-lg: 0rem;
+
+$py-sm: 6rem;
+$py-md: 4.8rem;
+$py-lg: 10rem;
+
+$max-width-desktop: 795px;
+
+:root {
+  --px: #{$px-sm};
+  --py: #{$py-sm};
+
+  @media (min-width: #{$breakpoint-mobile}) {
+    --px: #{$px-md};
+    --py: #{$py-md};
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    --px: #{$px-lg};
+    --py: #{$py-lg};
+  }
+}
+
+// --- Border Radius ---
+$radius-md: 0.8rem;
+
+// --- Interaction / Transition Defaults ---
+$transition-fast: 0.15s ease-in-out;
+$transition-normal: 0.25s ease-in-out;
+$transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
