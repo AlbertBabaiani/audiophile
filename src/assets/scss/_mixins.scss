@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+// --- Typography ---
+
+@mixin heading-xl {
+  font-family: $font-family;
+  font-size: 5.6rem;
+  font-weight: bold;
+  line-height: 1.04;
+  letter-spacing: 2px;
+  color: $color-black;
+}
+
+@mixin heading-lg {
+  font-family: $font-family;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 1.43px;
+  color: $color-black;
+}
+
+@mixin heading-md {
+  font-family: $font-family;
+  font-size: 3.2rem;
+  font-weight: bold;
+  line-height: 1.13;
+  letter-spacing: 1.14px;
+  color: $color-black;
+}
+
+@mixin body-md {
+  font-family: $font-family;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.67;
+  color: $color-black;
+}
