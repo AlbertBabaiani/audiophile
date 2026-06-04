@@ -114,15 +114,26 @@
 
 // Featured Products
 .featured-products {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 2.4rem;
 
   width: 100%;
   padding: var(--py) var(--px);
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    gap: 3.2rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    max-width: $max-width-desktop;
+    margin-inline: auto;
+    padding-block: 6.8rem 10rem;
+  }
 }
 
 .feature-card {
+  width: 100%;
   border-radius: $radius-md;
   overflow: hidden;
 }
@@ -143,20 +154,40 @@
 
   padding: 5.7rem 2.3rem 5.5rem;
 
+  @media (min-width: #{$breakpoint-tablet}) {
+    padding: 5.2rem 0 6.4rem;
+    background-size: 120%;
+    background-position: top -32rem center;
+  }
+
   h2 {
     @include heading-xl($color-white);
 
     margin-top: 3.4rem;
+    max-width: 30rem;
+
+    @media (min-width: #{$breakpoint-tablet}) {
+      margin-top: 6.6rem;
+    }
   }
 
   p {
     margin-block: 2.4rem;
+    max-width: 35rem;
 
     @include body-md(rgba($color-white, 0.75));
+
+    @media (min-width: #{$breakpoint-tablet}) {
+      margin-bottom: 4rem;
+    }
   }
 
   &-icon {
     width: 17.1rem;
+
+    @media (min-width: #{$breakpoint-tablet}) {
+      width: 20rem;
+    }
   }
 
   .btn {
@@ -194,6 +225,23 @@
     height: 100%;
     z-index: -1;
   }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    padding-left: 6.3rem;
+  }
+}
+
+.yx1-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+
+    height: 32rem;
+  }
 }
 
 .yx1-bg {
@@ -201,6 +249,10 @@
   width: 100%;
   height: 20rem;
   object-fit: cover;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    height: 100%;
+  }
 }
 
 .yx1 {
@@ -219,5 +271,10 @@
 
   .btn {
     @include button-outline-dark;
+  }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    padding-inline: 4.25rem;
+    height: 100%;
   }
 }

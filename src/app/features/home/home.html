@@ -17,59 +17,51 @@
 
 <section class="featured-products">
   <article class="feature-card zx9">
+    @let zx9 = featuredProducts().zx9;
+
     <picture>
-      <source srcset="images/home/desktop/image-speaker-zx9.png" media="(min-width: 1440px)" />
-      <source srcset="images/home/tablet/image-speaker-zx9.png" media="(min-width: 768px)" />
-      <img
-        class="zx9-icon"
-        src="images/home/mobile/image-speaker-zx9.png"
-        alt="Thumbnail of ZX9 speaker"
-      />
+      <source [srcset]="zx9.thumbnailUrls.desktop" media="(min-width: 1440px)" />
+      <source [srcset]="zx9.thumbnailUrls.tablet" media="(min-width: 768px)" />
+      <img class="zx9-icon" [src]="zx9.thumbnailUrls.mobile" [alt]="'Thumbnail of ' + zx9.title" />
     </picture>
 
-    <h2>
-      ZX9 <br />
-      SPEAKER
-    </h2>
+    <h2>{{ zx9.title }}</h2>
 
     <p>
-      Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
+      {{ zx9.description }}
     </p>
 
-    <a routerLink="" class="btn">SEE PRODUCT</a>
+    <a [routerLink]="zx9.link" class="btn">SEE PRODUCT</a>
   </article>
 
   <article class="feature-card zx7">
+    @let zx7 = featuredProducts().zx7;
     <picture>
-      <source srcset="images/home/desktop/image-speaker-zx7.jpg" media="(min-width: 1440px)" />
-      <source srcset="images/home/tablet/image-speaker-zx7.jpg" media="(min-width: 768px)" />
-      <img
-        class="zx7-bg"
-        src="images/home/mobile/image-speaker-zx7.jpg"
-        alt="Thumbnail of ZX7 speaker"
-      />
+      <source [srcset]="zx7.thumbnailUrls.desktop" media="(min-width: 1440px)" />
+      <source [srcset]="zx7.thumbnailUrls.tablet" media="(min-width: 768px)" />
+      <img class="zx7-bg" [src]="zx7.thumbnailUrls.mobile" [alt]="'Thumbnail of ' + zx7.title" />
     </picture>
 
-    <h2>ZX7 SPEAKER</h2>
+    <h2>{{ zx7.title }}</h2>
 
-    <a routerLink="" class="btn">SEE PRODUCT</a>
+    <a [routerLink]="zx7.link" class="btn">SEE PRODUCT</a>
   </article>
 
-  <article class="feature-card YX1-preview">
-    <picture>
-      <source srcset="images/home/desktop/image-earphones-yx1.jpg" media="(min-width: 1440px)" />
-      <source srcset="images/home/tablet/image-earphones-yx1.jpg" media="(min-width: 768px)" />
-      <img
-        class="yx1-bg"
-        src="images/home/mobile/image-earphones-yx1.jpg"
-        alt="Thumbnail of earphones YX1"
-      />
-    </picture>
-  </article>
+  <div class="yx1-wrapper">
+    @let yx1 = featuredProducts().yx1;
 
-  <article class="feature-card yx1">
-    <h2>ZX7 SPEAKER</h2>
+    <article class="feature-card YX1-preview">
+      <picture>
+        <source [srcset]="yx1.thumbnailUrls.desktop" media="(min-width: 1440px)" />
+        <source [srcset]="yx1.thumbnailUrls.tablet" media="(min-width: 768px)" />
+        <img class="yx1-bg" [src]="yx1.thumbnailUrls.mobile" [alt]="'Thumbnail of ' + yx1.title" />
+      </picture>
+    </article>
 
-    <a routerLink="" class="btn">SEE PRODUCT</a>
-  </article>
+    <article class="feature-card yx1">
+      <h2>{{ yx1.title }}</h2>
+
+      <a [routerLink]="yx1.link" class="btn">SEE PRODUCT</a>
+    </article>
+  </div>
 </section>

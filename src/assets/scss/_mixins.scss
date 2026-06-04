@@ -11,7 +11,7 @@
   letter-spacing: 1.29px;
   color: $color;
 
-  @media (min-width: #{$breakpoint-desktop}) {
+  @media (min-width: #{$breakpoint-tablet}) {
     font-size: 5.6rem;
     line-height: 1.04;
     letter-spacing: 2px;
