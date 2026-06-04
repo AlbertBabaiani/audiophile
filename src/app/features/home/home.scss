@@ -111,3 +111,51 @@
     outline: 2px solid $color-orange-hover;
   }
 }
+
+// Featured Products
+.featured-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+
+  width: 100%;
+  padding: var(--py) var(--px);
+}
+
+.feature-card {
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.zx9 {
+  background-color: $color-orange;
+  background-image: url(/images/home/desktop/pattern-circles.svg);
+  background-position: top -12rem center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: $color-white;
+  text-align: center;
+
+  padding: 5.7rem 2.3rem 5.5rem;
+
+  h2 {
+    @include heading-xl($color-white);
+
+    margin-top: 3.4rem;
+  }
+
+  p {
+    margin-block: 2.4rem;
+
+    @include body-md(rgba($color-white, 0.75));
+  }
+
+  &-icon {
+    width: 17.1rem;
+  }
+}

@@ -2,44 +2,50 @@
 
 // --- Typography ---
 
-// @mixin heading-xl {
-//   font-family: $font-family;
-//   text-transform: uppercase;
-//   font-size: 5.6rem;
-//   font-weight: bold;
-//   line-height: 1.04;
-//   letter-spacing: 2px;
-//   color: $color-black;
-// }
+@mixin heading-xl($color: $color-black) {
+  font-family: $font-family;
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 1.11;
+  letter-spacing: 1.29px;
+  color: $color;
 
-// @mixin heading-lg {
+  @media (min-width: #{$breakpoint-desktop}) {
+    font-size: 5.6rem;
+    line-height: 1.04;
+    letter-spacing: 2px;
+  }
+}
+
+// @mixin heading-lg($color: $color-black) {
 //   font-family: $font-family;
 //   text-transform: uppercase;
 //   font-size: 4rem;
 //   font-weight: bold;
 //   line-height: 1.1;
 //   letter-spacing: 1.43px;
-//   color: $color-black;
+//   color: $color;
 // }
 
-// @mixin heading-md {
+// @mixin heading-md($color: $color-black) {
 //   font-family: $font-family;
 //   text-transform: uppercase;
 //   font-size: 3.2rem;
 //   font-weight: bold;
 //   line-height: 1.13;
 //   letter-spacing: 1.14px;
-//   color: $color-black;
+//   color: $color;
 // }
 
-@mixin heading-xs {
+@mixin heading-xs($color: $color-black) {
   font-family: $font-family;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.13;
   letter-spacing: 1.07px;
-  color: $color-black;
+  color: $color;
 
   @media (min-width: #{$breakpoint-desktop}) {
     font-size: 1.8rem;
@@ -47,11 +53,10 @@
   }
 }
 
-@mixin body-md {
+@mixin body-md($color: $color-black) {
   font-family: $font-family;
-  text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.67;
-  color: $color-black;
+  color: $color;
 }
