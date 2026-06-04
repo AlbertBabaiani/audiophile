@@ -1,0 +1,67 @@
+@use '../../../assets/scss/variables' as *;
+@use '../../../assets/scss/mixins' as *;
+
+// Categories Section
+
+.categories {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6.8rem;
+
+  padding: 9.2rem var(--px) var(--py);
+}
+
+.category {
+  background-color: $color-light-gray;
+  border-radius: $radius-md;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  //   height: 16.5rem;
+
+  padding-block: 8.8rem 0.7rem;
+
+  position: relative;
+}
+
+.category-thumbnail {
+  width: 16rem;
+  position: absolute;
+
+  top: -5rem;
+}
+
+.category-title {
+  @include heading-xs;
+
+  margin-bottom: 0.2rem;
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+
+  padding: 1.5rem;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(128, 128, 128);
+  text-decoration: none;
+
+  transition: $transition-normal;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-orange-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-orange-hover;
+  }
+}

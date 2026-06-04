@@ -1,1 +1,15 @@
-<p>home works!</p>
+<section class="categories">
+  @for (category of categories(); track $index) {
+    <div class="category">
+      <img
+        class="category-thumbnail"
+        [src]="category.thumbnailUrl"
+        alt="{{ category.title }} category thumbnail"
+      />
+      <h2 class="category-title">{{ category.title }}</h2>
+      <a [routerLink]="category.link" class="category-link"
+        >SHOP <img src="images/shared/desktop/icon-arrow-right.svg" alt="" aria-hidden="true"
+      /></a>
+    </div>
+  }
+</section>
