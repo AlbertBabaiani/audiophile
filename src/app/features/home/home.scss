@@ -10,6 +10,20 @@
   gap: 6.8rem;
 
   padding: 9.2rem var(--px) var(--py);
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    padding-top: 14.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    padding-top: 20rem;
+    gap: 3rem;
+
+    max-width: $max-width-desktop;
+    margin-inline: auto;
+  }
 }
 
 .category {
@@ -23,16 +37,48 @@
 
   //   height: 16.5rem;
 
-  padding-block: 8.8rem 0.7rem;
+  padding-block: 9rem 0.8rem;
 
   position: relative;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    padding-block: 11.6rem 1.5rem;
+  }
 }
 
 .category-thumbnail {
-  width: 16rem;
   position: absolute;
 
-  top: -5rem;
+  top: -5.4rem;
+  z-index: 2;
+
+  &.headphones {
+    width: 16rem;
+    top: -6.2rem;
+
+    @media (min-width: #{$breakpoint-desktop}) {
+      width: 20rem;
+      top: -7.9rem;
+    }
+  }
+
+  &.speakers {
+    width: 16.6rem;
+
+    @media (min-width: #{$breakpoint-desktop}) {
+      width: 21rem;
+      top: -7rem;
+    }
+  }
+
+  &.earphones {
+    width: 17rem;
+
+    @media (min-width: #{$breakpoint-desktop}) {
+      width: 22rem;
+      top: -7.2rem;
+    }
+  }
 }
 
 .category-title {
