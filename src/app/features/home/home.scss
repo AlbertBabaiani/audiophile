@@ -11,6 +11,9 @@
 
   padding: 9.2rem var(--px) var(--py);
 
+  max-width: var(--max-width);
+  margin-inline: auto;
+
   @media (min-width: #{$breakpoint-tablet}) {
     padding-top: 14.8rem;
     grid-template-columns: repeat(3, 1fr);
@@ -20,9 +23,6 @@
   @media (min-width: #{$breakpoint-desktop}) {
     padding-top: 20rem;
     gap: 3rem;
-
-    max-width: $max-width-desktop;
-    margin-inline: auto;
   }
 }
 
@@ -121,13 +121,14 @@
   width: 100%;
   padding: var(--py) var(--px);
 
+  max-width: var(--max-width);
+  margin-inline: auto;
+
   @media (min-width: #{$breakpoint-tablet}) {
     gap: 3.2rem;
   }
 
   @media (min-width: #{$breakpoint-desktop}) {
-    max-width: $max-width-desktop;
-    margin-inline: auto;
     padding-block: 6.8rem 10rem;
   }
 }
@@ -154,10 +155,24 @@
 
   padding: 5.7rem 2.3rem 5.5rem;
 
+  position: relative;
+
+  overflow: hidden;
+
   @media (min-width: #{$breakpoint-tablet}) {
     padding: 5.2rem 0 6.4rem;
     background-size: 120%;
     background-position: top -32rem center;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    padding: 13.3rem 0 12.4rem 67rem;
+
+    align-items: start;
+    text-align: start;
+
+    background-size: 100%;
+    background-position: top -6rem left -22rem;
   }
 
   h2 {
@@ -187,6 +202,13 @@
 
     @media (min-width: #{$breakpoint-tablet}) {
       width: 20rem;
+    }
+
+    @media (min-width: #{$breakpoint-desktop}) {
+      position: absolute;
+      left: 12rem;
+      bottom: -1.6rem;
+      width: 41rem;
     }
   }
 
