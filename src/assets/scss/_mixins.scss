@@ -110,6 +110,23 @@
   }
 }
 
+@mixin button-solid-orange {
+  @include button-base;
+
+  background-color: $color-orange;
+  color: $color-white;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-orange-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-orange-hover;
+    outline-offset: 4px;
+  }
+}
+
 @mixin button-outline-dark {
   @include button-base();
 

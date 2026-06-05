@@ -1,6 +1,93 @@
 @use '../../../assets/scss/variables' as *;
 @use '../../../assets/scss/mixins' as *;
 
+// Hero Section
+
+.hero {
+  position: relative;
+  height: 51rem;
+
+  margin-bottom: 2rem;
+
+  .btn {
+    @include button-solid-orange;
+  }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    height: 64rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    height: 66em;
+  }
+}
+
+.hero-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    max-width: $max-width-desktop;
+    margin-inline: auto;
+
+    text-align: start;
+    align-items: start;
+  }
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: -1;
+}
+
+h1 {
+  @include heading-xl($color-white);
+
+  max-width: 33rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    max-width: 40rem;
+  }
+}
+
+.subtitle {
+  opacity: 0.5;
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  color: $color-white;
+  margin-bottom: 1.6rem;
+  font-weight: 300;
+}
+
+.hero-description {
+  @include body-md($color-white);
+  max-width: 32.8rem;
+  opacity: 0.7;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+
+  margin-block: 2.4rem 2.8rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    max-width: 38rem;
+    margin-bottom: 4rem;
+  }
+}
+
 // Categories Section
 
 .categories {
@@ -112,7 +199,7 @@
   }
 }
 
-// Featured Products
+// Featured Products Section
 .featured-products {
   display: flex;
   flex-direction: column;

@@ -9,6 +9,19 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
+  heroProduct = signal({
+    title: 'XX99 Mark II HeadphoneS',
+    description:
+      'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.',
+    link: 'earphones/xx99',
+
+    thumbnailUrls: {
+      mobile: 'images/home/mobile/image-header.jpg',
+      tablet: 'images/home/tablet/image-header.jpg',
+      desktop: 'images/home/desktop/image-hero.jpg',
+    },
+  });
+
   categories = signal([
     {
       title: 'HEADPHONES',

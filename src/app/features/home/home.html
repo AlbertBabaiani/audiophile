@@ -1,3 +1,27 @@
+<section class="hero">
+  @let heroProd = heroProduct();
+  <picture>
+    <source [srcset]="heroProd.thumbnailUrls.desktop" media="(min-width: 1440px)" />
+    <source [srcset]="heroProd.thumbnailUrls.tablet" media="(min-width: 768px)" />
+    <img
+      class="hero-img"
+      [src]="heroProd.thumbnailUrls.mobile"
+      [alt]="'Thumbnail of ' + heroProd.title"
+    />
+  </picture>
+
+  <div class="hero-content">
+    <hgroup>
+      <p class="subtitle">NEW PRODUCT</p>
+      <h1>{{ heroProd.title }}</h1>
+    </hgroup>
+
+    <p class="hero-description">{{ heroProd.description }}</p>
+
+    <a [routerLink]="heroProd.link" class="btn">SEE PRODUCT</a>
+  </div>
+</section>
+
 <section class="categories">
   @for (category of categories(); track category.title) {
     <div class="category">
