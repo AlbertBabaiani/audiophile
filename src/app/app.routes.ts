@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Audiophile - Speakers',
   },
   {
+    path: 'earphones',
+    loadComponent: () => import('./features/earphones/earphones').then((c) => c.Earphones),
+    title: 'Audiophile - Earphones',
+  },
+  {
     path: '**',
     redirectTo: '',
   },
