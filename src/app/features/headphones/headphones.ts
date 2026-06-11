@@ -17,9 +17,12 @@ export class Headphones {
       isNew: true,
       link: '/products/xx99-mark-two',
       images: {
-        mobile: 'images/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg',
-        tablet: 'images/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg',
-        desktop: 'images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg',
+        mobile:
+          'images/earphones/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg',
+        tablet:
+          'images/earphones/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg',
+        desktop:
+          'images/earphones/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg',
       },
     },
     {
@@ -29,9 +32,12 @@ export class Headphones {
       isNew: false,
       link: '/products/xx99-mark-one',
       images: {
-        mobile: 'images/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg',
-        tablet: 'images/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg',
-        desktop: 'images/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg',
+        mobile:
+          'images/earphones/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg',
+        tablet:
+          'images/earphones/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg',
+        desktop:
+          'images/earphones/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg',
       },
     },
     {
@@ -41,9 +47,9 @@ export class Headphones {
       isNew: false,
       link: '/products/xx59',
       images: {
-        mobile: 'images/product-xx59-headphones/mobile/image-category-page-preview.jpg',
-        tablet: 'images/product-xx59-headphones/tablet/image-category-page-preview.jpg',
-        desktop: 'images/product-xx59-headphones/desktop/image-category-page-preview.jpg',
+        mobile: 'images/earphones/product-xx59-headphones/mobile/image-category-page-preview.jpg',
+        tablet: 'images/earphones/product-xx59-headphones/tablet/image-category-page-preview.jpg',
+        desktop: 'images/earphones/product-xx59-headphones/desktop/image-category-page-preview.jpg',
       },
     },
   ]);
