@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/home/home').then((c) => c.Home),
   },
   {
+    path: 'headphones',
+    loadComponent: () => import('./features/headphones/headphones').then((c) => c.Headphones),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

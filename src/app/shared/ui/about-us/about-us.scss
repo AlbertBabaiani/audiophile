@@ -30,7 +30,7 @@
   }
 
   @media (min-width: #{$breakpoint-desktop}) {
-    height: clamp(58.8rem, 40vw, 60rem);
+    height: 58.5rem;
     max-width: 54rem;
   }
 }
