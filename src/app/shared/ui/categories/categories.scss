@@ -33,11 +33,17 @@
   justify-content: center;
   align-items: center;
 
+  text-decoration: none;
+
   //   height: 16.5rem;
 
   padding-block: 9rem 0.8rem;
 
   position: relative;
+
+  &:focus-visible {
+    outline: 2px solid $color-orange-hover;
+  }
 
   @media (min-width: #{$breakpoint-desktop}) {
     padding-block: 11.6rem 1.5rem;
@@ -49,6 +55,11 @@
 
   top: -5.4rem;
   z-index: 2;
+  transition: transform 0.3s ease;
+
+  .category:hover & {
+    transform: scale(1.07);
+  }
 
   &.headphones {
     width: 16rem;
@@ -100,12 +111,7 @@
 
   transition: $transition-normal;
 
-  &:hover,
-  &:focus-visible {
+  .category:hover & {
     color: $color-orange-hover;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-orange-hover;
   }
 }
