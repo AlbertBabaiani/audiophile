@@ -3,7 +3,7 @@
     <a [routerLink]="category.link" class="category">
       <img
         class="category-thumbnail"
-        [class]="category.link"
+        [class]="category.title.toLowerCase()"
         [src]="category.thumbnailUrl"
         [alt]="category.title + ' category thumbnail'"
       />

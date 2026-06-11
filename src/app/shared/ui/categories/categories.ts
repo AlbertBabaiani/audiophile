@@ -12,17 +12,17 @@ export class Categories {
     {
       title: 'HEADPHONES',
       thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-headphones.png',
-      link: 'headphones',
+      link: '/headphones',
     },
     {
       title: 'SPEAKERS',
       thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-speakers.png',
-      link: 'speakers',
+      link: '/speakers',
     },
     {
       title: 'EARPHONES',
       thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-earphones.png',
-      link: 'earphones',
+      link: '/earphones',
     },
   ]);
 }
