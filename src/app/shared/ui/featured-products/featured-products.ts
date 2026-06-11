@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HeadphonesModel } from '../../../core/models/headphones-model';
+import { ProductModel } from '../../../core/models/models';
 
 @Component({
   selector: 'app-featured-products',
@@ -9,5 +9,5 @@ import { HeadphonesModel } from '../../../core/models/headphones-model';
   styleUrl: './featured-products.scss',
 })
 export class FeaturedProducts {
-  products = input.required<HeadphonesModel[]>();
+  products = input.required<ProductModel[]>();
 }

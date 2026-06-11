@@ -1,4 +1,4 @@
-export interface HeadphonesModel {
+export interface ProductModel {
   id: string;
   slug: string;
   name: string;
@@ -7,6 +7,13 @@ export interface HeadphonesModel {
   image: CategoryImage;
   description: string;
   isNew: boolean;
+  features: string;
+  includes: {
+    item: string;
+    quantity: number;
+  }[];
+  price: number;
+  quantity: number;
 }
 
 interface CategoryImage {
