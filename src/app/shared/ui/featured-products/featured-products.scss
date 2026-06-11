@@ -110,11 +110,9 @@
 }
 
 .featured-product-description {
-  @include body-md;
+  @include body-md(rgba($color-black, 0.5));
 
   max-width: 44.5rem;
-
-  opacity: 0.5;
 
   @media (min-width: #{$breakpoint-tablet}) {
     max-width: 60rem;

@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="logo-and-navigation">
+    <a routerLink="/" class="logo">
+      <img src="images/shared/desktop/logo.svg" alt="Audiophile Logo" />
+    </a>
+
+    <nav>
+      <ul class="links">
+        @for (link of navigation(); track link.title) {
+          <li>
+            <a [routerLink]="link.path">{{ link.title }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <p class="description">
+    Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers
+    and sound specialists who are devoted to helping you get the most out of personal audio. Come
+    and visit our demo facility - we’re open 7 days a week.
+  </p>
+
+  <div class="rights-and-links">
+    <p class="copyright">Copyright © 2026. All Rights Reserved.</p>
+
+    <div class="social-links">
+      @for (icon of socialLinks(); track icon.title) {
+        <a href="#">
+          <img [src]="icon.link" [alt]="icon.title" [title]="icon.title" />
+        </a>
+      }
+    </div>
+  </div>
+</div>

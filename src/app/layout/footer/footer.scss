@@ -1,0 +1,168 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+
+:host {
+  background-color: $color-black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  padding: 5.2rem var(--px);
+  max-width: var(--max-width);
+  margin-inline: auto;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-orange;
+    width: 10rem;
+    height: 4px;
+  }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    padding-block: 6rem;
+    text-align: start;
+    align-items: start;
+    gap: unset;
+
+    &::before {
+      left: var(--px);
+      transform: none;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    padding-block: 7.5rem;
+
+    &::before {
+      left: 0;
+    }
+  }
+}
+
+.logo-and-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    gap: 3.4rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.4rem;
+    width: 100%;
+  }
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  width: min-content;
+
+  transition: $transition-normal;
+
+  &:focus-visible {
+    outline: 2px solid $color-orange;
+    outline-offset: 4px;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.92;
+    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem;
+
+    transition: $transition-normal;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-orange;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-orange;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    flex-direction: row;
+    gap: 3.4rem;
+  }
+}
+
+.description {
+  @include body-md(rgba($color-white, 0.5));
+  margin-block: 4.8rem;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    margin-top: 3.6rem;
+    max-width: 54rem;
+  }
+}
+
+.rights-and-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    gap: unset;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.copyright {
+  @include body-md(rgba($color-white, 0.5));
+}
+
+.social-links {
+  display: flex;
+  align-items: stretch;
+  gap: 1.6rem;
+
+  a {
+    transition: $transition-normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.65;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-orange;
+    }
+  }
+}
