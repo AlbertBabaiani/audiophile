@@ -1,0 +1,26 @@
+<div class="product-list">
+  @for (product of products(); track product.id) {
+    <section class="featured-product">
+      <picture class="featured-product-image">
+        <source media="(min-width: 768px)" [srcset]="product.image.tablet" />
+        <source media="(min-width: 1440px)" [srcset]="product.image.desktop" />
+
+        <img [src]="product.image.mobile" [alt]="product.name" />
+      </picture>
+
+      <div class="featured-product-content">
+        @if (product.isNew) {
+          <span class="featured-product-badge">NEW PRODUCT</span>
+        }
+        <h2 class="featured-product-name">{{ product.name }}</h2>
+        <p class="featured-product-description">
+          {{ product.description }}
+        </p>
+
+        <a [routerLink]="product.category + '/' + product.slug" class="featured-product-button"
+          >See Product</a
+        >
+      </div>
+    </section>
+  }
+</div>

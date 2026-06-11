@@ -2,29 +2,6 @@
   <h1>HEADPHONES</h1>
 </header>
 
-<div class="products--list">
-  @for (item of headphones(); track item.name) {
-    <section class="featured--product">
-      <picture class="featured--product--image">
-        <source media="(min-width: 768px)" [srcset]="item.images.tablet" />
-        <source media="(min-width: 1440px)" [srcset]="item.images.desktop" />
-
-        <img [src]="item.images.mobile" [alt]="item.name" />
-      </picture>
-
-      <div class="featured--product--content">
-        @if (item.isNew) {
-          <span class="featured--product--badge">NEW PRODUCT</span>
-        }
-        <h2 class="featured--product--name">{{ item.name }}</h2>
-        <p class="featured--product--description">
-          {{ item.description }}
-        </p>
-
-        <a [routerLink]="item.link" class="featured--product--button">See Product</a>
-      </div>
-    </section>
-  }
-</div>
+<app-featured-products [products]="headphones()" />
 
 <app-categories />
