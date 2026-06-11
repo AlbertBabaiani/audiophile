@@ -13,13 +13,13 @@
   margin-inline: auto;
 
   @media (min-width: #{$breakpoint-tablet}) {
-    padding-top: 14.8rem;
+    padding-top: 9rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
   @media (min-width: #{$breakpoint-desktop}) {
-    padding-top: 20rem;
+    padding-top: 14rem;
     gap: 3rem;
   }
 }
