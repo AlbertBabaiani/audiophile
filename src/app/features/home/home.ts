@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Categories } from '../../shared/ui/categories/categories';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, Categories],
   templateUrl: './home.html',
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,24 +22,6 @@ export class Home {
       desktop: 'images/home/desktop/image-hero.jpg',
     },
   });
-
-  categories = signal([
-    {
-      title: 'HEADPHONES',
-      thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-headphones.png',
-      link: 'headphones',
-    },
-    {
-      title: 'SPEAKERS',
-      thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-speakers.png',
-      link: 'speakers',
-    },
-    {
-      title: 'EARPHONES',
-      thumbnailUrl: 'images/shared/desktop/image-category-thumbnail-earphones.png',
-      link: 'earphones',
-    },
-  ]);
 
   featuredProducts = signal({
     zx9: {
