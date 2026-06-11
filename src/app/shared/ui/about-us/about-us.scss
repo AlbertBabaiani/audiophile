@@ -1,0 +1,88 @@
+@use '../../../../styles/mixins' as *;
+@use '../../../../styles/variables' as *;
+
+.about-us {
+  text-align: center;
+  padding-inline: var(--px);
+  max-width: var(--max-width);
+  margin: 6rem auto;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 12.5rem;
+    margin-block: 8rem;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  height: clamp(30rem, 80vw, 44rem);
+  object-fit: cover;
+  object-position: center;
+  border-radius: $radius-md;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    height: clamp(30rem, 45vw, 58.8rem);
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    height: clamp(58.8rem, 40vw, 60rem);
+    max-width: 54rem;
+  }
+}
+
+picture {
+  width: 100%;
+  @media (min-width: #{$breakpoint-desktop}) {
+    flex: 1;
+    max-width: 54rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+
+  margin-top: 4rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    margin-top: 6.3rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    align-items: flex-start;
+    margin-top: 0;
+    flex: 1;
+    max-width: 54rem;
+  }
+}
+
+.title {
+  @include heading-lg;
+  max-width: 32.7rem;
+
+  span {
+    color: $color-orange;
+  }
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    max-width: 57.3rem;
+  }
+}
+
+.description {
+  @include body-md;
+  opacity: 0.5;
+
+  max-width: 34rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    max-width: 57.2rem;
+  }
+}
