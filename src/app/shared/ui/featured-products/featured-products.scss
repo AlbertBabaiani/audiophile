@@ -91,10 +91,7 @@
 }
 
 .featured-product-badge {
-  font-family: $font-family;
-  font-size: 1.4rem;
-  letter-spacing: 1rem;
-  color: $color-orange;
+  @include new-product-badge;
 
   @media (min-width: #{$breakpoint-desktop}) {
     margin-bottom: 1.6rem;

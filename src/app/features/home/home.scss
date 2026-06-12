@@ -65,12 +65,7 @@ h1 {
 }
 
 .subtitle {
-  opacity: 0.5;
-  font-size: 1.4rem;
-  letter-spacing: 1rem;
-  color: $color-white;
-  margin-bottom: 1.6rem;
-  font-weight: 300;
+  @include new-product-badge(rgba($color-white, 0.5));
 }
 
 .hero-description {

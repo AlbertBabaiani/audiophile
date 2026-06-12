@@ -22,6 +22,24 @@ export const routes: Routes = [
     title: 'Audiophile - Earphones',
   },
   {
+    path: 'headphones/:slug',
+    loadComponent: () =>
+      import('./features/product-detail/product-detail').then((c) => c.ProductDetail),
+    title: 'Audiophile - Headphones',
+  },
+  {
+    path: 'speakers/:slug',
+    loadComponent: () =>
+      import('./features/product-detail/product-detail').then((c) => c.ProductDetail),
+    title: 'Audiophile - Speakers',
+  },
+  {
+    path: 'earphones/:slug',
+    loadComponent: () =>
+      import('./features/product-detail/product-detail').then((c) => c.ProductDetail),
+    title: 'Audiophile - Earphones',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

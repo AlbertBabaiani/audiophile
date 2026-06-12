@@ -74,6 +74,13 @@
   color: $color;
 }
 
+@mixin new-product-badge($color: $color-orange) {
+  font-family: $font-family;
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  color: $color;
+}
+
 // --- Buttons ---
 
 @mixin button-base {
