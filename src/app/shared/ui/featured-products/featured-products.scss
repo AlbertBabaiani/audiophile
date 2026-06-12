@@ -14,7 +14,7 @@
     padding-block: 12rem;
   }
   @media (min-width: #{$breakpoint-desktop}) {
-    padding-block: 16rem;
+    padding-block: 16rem 12rem;
     gap: 16rem;
   }
 }

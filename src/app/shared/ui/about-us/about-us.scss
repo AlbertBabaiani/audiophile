@@ -5,7 +5,7 @@
   text-align: center;
   padding-inline: var(--px);
   max-width: var(--max-width);
-  margin: 6rem auto;
+  margin: 6rem auto 12rem;
 
   @media (min-width: #{$breakpoint-desktop}) {
     display: flex;
@@ -14,7 +14,7 @@
     justify-content: space-between;
     text-align: left;
     gap: 12.5rem;
-    margin-block: 7rem;
+    margin-block: 7rem 16rem;
   }
 }
 
