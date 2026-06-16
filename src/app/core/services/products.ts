@@ -1,30 +1,37 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { collection, getDocs } from 'firebase/firestore';
+import { FIREBASE_DB } from './firebase';
 import { ProductModel } from '../models/models';
-import productsData from '../../../assets/data.json';
-
-const allProductsData: ProductModel[] = (productsData as any[]).map((item) => ({
-  id: String(item.id),
-  slug: item.slug,
-  name: item.name,
-  category: item.category,
-  categoryImage: item.categoryImage,
-  image: item.image,
-  description: item.description,
-  isNew: item.new,
-  features: item.features,
-  includes: item.includes,
-  price: item.price,
-  quantity: item.quantity ?? 1,
-  discount: item.discount ?? 0,
-}));
 
 @Injectable({
   providedIn: 'root',
 })
 export class Products {
-  headphones = signal<ProductModel[]>(allProductsData.filter((p) => p.category === 'headphones'));
-  speakers = signal<ProductModel[]>(allProductsData.filter((p) => p.category === 'speakers'));
-  earphones = signal<ProductModel[]>(allProductsData.filter((p) => p.category === 'earphones'));
+  private db = inject(FIREBASE_DB);
+
+  headphones = signal<ProductModel[]>([]);
+  speakers = signal<ProductModel[]>([]);
+  earphones = signal<ProductModel[]>([]);
 
   allProducts = computed(() => [...this.headphones(), ...this.speakers(), ...this.earphones()]);
+
+  constructor() {
+    this.fetchProducts();
+  }
+
+  async fetchProducts(): Promise<void> {
+    try {
+      const querySnapshot = await getDocs(collection(this.db, 'products'));
+      const products: ProductModel[] = [];
+      querySnapshot.forEach((doc) => {
+        products.push(doc.data() as ProductModel);
+      });
+
+      this.headphones.set(products.filter((p) => p.category === 'headphones'));
+      this.speakers.set(products.filter((p) => p.category === 'speakers'));
+      this.earphones.set(products.filter((p) => p.category === 'earphones'));
+    } catch (error) {
+      console.error('Error fetching products from Firestore:', error);
+    }
+  }
 }

@@ -13,8 +13,13 @@ export interface ProductModel {
     quantity: number;
   }[];
   price: number;
-  quantity: number;
   discount: number;
+  quantity: number;
+  gallery: {
+    first: CategoryImage;
+    second: CategoryImage;
+    third: CategoryImage;
+  };
 }
 
 interface CategoryImage {
