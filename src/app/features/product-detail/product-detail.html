@@ -1,13 +1,103 @@
+<button type="button" class="go-back-btn" (click)="goBack()">Go back</button>
 <section class="product-detail">
+  <img
+    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-product.jpg"
+    alt="Image of XX99 Mark II Headphones"
+    class="product-image"
+  />
+
   <span class="new-product-badge">NEW PRODUCT</span>
 
   <h1>XX99 MARK II HEADPHONES</h1>
 
   <p class="description">
-    Located at the heart of New York City, Audiophile is the premier store for high end headphones,
-    earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration
-    rooms available for you to browse and experience a wide range of our products. Stop by our store
-    to meet some of the fantastic people who make Audiophile the best place to buy your portable
-    audio equipment.
+    The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium
+    headphone experience by reproducing the balanced depth and precision of studio-quality sound.
   </p>
+
+  <div class="price-container">
+    <p class="current-price discounted">{{ 2999 | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+    <span class="new-price">{{ 1299 | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
+  </div>
+
+  <div class="quantity-controls-and-add-cart">
+    <div class="quantity-controls">
+      <button type="button" class="decrement-btn quantity-btn">-</button>
+      <span class="quantity-display">1</span>
+      <button type="button" class="increment-btn quantity-btn">+</button>
+    </div>
+
+    <button type="button" class="add-to-cart-btn">ADD TO CART</button>
+  </div>
 </section>
+
+<div class="features-and-in-box-container">
+  <section class="features">
+    <h2>FEATURES</h2>
+
+    <p class="features-description">
+      Featuring a genuine leather head strap and premium earcups, these headphones deliver superior
+      comfort for those who like to enjoy endless listening. It includes intuitive controls designed
+      for any situation. Whether you're taking a business call or just in your own personal space,
+      the auto on/off and pause features ensure that you'll never miss a beat.
+
+      <br /><br />
+
+      The advanced Active Noise Cancellation with built-in equalizer allow you to experience your
+      audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with
+      your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17
+      hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge
+      technology, and a modern design aesthetic.
+    </p>
+  </section>
+
+  <section class="in-box">
+    <h2>IN THE BOX</h2>
+
+    <ul class="in-box-list">
+      <li class="in-box-list-item">
+        <p class="in-box-list-item-quantity">2x</p>
+
+        <p class="in-box-list-item-name">USB-C Charging Cable</p>
+      </li>
+
+      <li class="in-box-list-item">
+        <p class="in-box-list-item-quantity">1x</p>
+
+        <p class="in-box-list-item-name">3.5mm Headphone Jack</p>
+      </li>
+
+      <li class="in-box-list-item">
+        <p class="in-box-list-item-quantity">1x</p>
+
+        <p class="in-box-list-item-name">Carrying Case</p>
+      </li>
+
+      <li class="in-box-list-item">
+        <p class="in-box-list-item-quantity">1x</p>
+
+        <p class="in-box-list-item-name">User Manual</p>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<div class="product-image-gallery">
+  <img
+    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg"
+    alt="Image 1 of productxx99 mark two headphones"
+    class="product-image-gallery-image image-gallery-11"
+  />
+
+  <img
+    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg"
+    alt="Image 2 of productxx99 mark two headphones"
+    class="product-image-gallery-image image-gallery-2"
+  />
+
+  <img
+    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg"
+    alt="Image 3 of productxx99 mark two headphones"
+    class="product-image-gallery-image image-gallery-3"
+  />
+</div>
