@@ -1,33 +1,47 @@
-<button type="button" class="go-back-btn" (click)="goBack()">Go back</button>
-<section class="product-detail">
-  <img
-    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-product.jpg"
-    alt="Image of XX99 Mark II Headphones"
-    class="product-image"
-  />
+<div class="go-back-btn-container">
+  <button type="button" class="go-back-btn" (click)="goBack()">Go Back</button>
+</div>
+<section class="product-details-container">
+  <picture>
+    <source
+      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-product.jpg"
+      media="(min-width: 768px)"
+    />
+    <source
+      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+      media="(min-width: 1440px)"
+    />
+    <img
+      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-product.jpg"
+      alt="Image of XX99 Mark II Headphones"
+      class="product-image"
+    />
+  </picture>
 
-  <span class="new-product-badge">NEW PRODUCT</span>
+  <div class="product-details">
+    <span class="new-product-badge">NEW PRODUCT</span>
 
-  <h1>XX99 MARK II HEADPHONES</h1>
+    <h1>XX99 MARK II HEADPHONES</h1>
 
-  <p class="description">
-    The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium
-    headphone experience by reproducing the balanced depth and precision of studio-quality sound.
-  </p>
+    <p class="description">
+      The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium
+      headphone experience by reproducing the balanced depth and precision of studio-quality sound.
+    </p>
 
-  <div class="price-container">
-    <p class="current-price discounted">{{ 2999 | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
-    <span class="new-price">{{ 1299 | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-  </div>
-
-  <div class="quantity-controls-and-add-cart">
-    <div class="quantity-controls">
-      <button type="button" class="decrement-btn quantity-btn">-</button>
-      <span class="quantity-display">1</span>
-      <button type="button" class="increment-btn quantity-btn">+</button>
+    <div class="price-container">
+      <p class="current-price discounted">{{ 2999 | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+      <span class="new-price">{{ 1299 | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
     </div>
 
-    <button type="button" class="add-to-cart-btn">ADD TO CART</button>
+    <div class="quantity-controls-and-add-cart">
+      <div class="quantity-controls">
+        <button type="button" class="decrement-btn quantity-btn">-</button>
+        <span class="quantity-display">1</span>
+        <button type="button" class="increment-btn quantity-btn">+</button>
+      </div>
+
+      <button type="button" class="add-to-cart-btn">ADD TO CART</button>
+    </div>
   </div>
 </section>
 
@@ -83,21 +97,52 @@
 </div>
 
 <div class="product-image-gallery">
-  <img
-    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg"
-    alt="Image 1 of productxx99 mark two headphones"
-    class="product-image-gallery-image image-gallery-11"
-  />
+  <picture class="image-gallery-1">
+    <source
+      media="(min-width: 768px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg"
+    />
+    <source
+      media="(min-width: 1440px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
+    />
 
-  <img
-    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg"
-    alt="Image 2 of productxx99 mark two headphones"
-    class="product-image-gallery-image image-gallery-2"
-  />
+    <img
+      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg"
+      alt="Image 1 of productxx99 mark two headphones"
+      class="product-image-gallery-image"
+    />
+  </picture>
 
-  <img
-    src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg"
-    alt="Image 3 of productxx99 mark two headphones"
-    class="product-image-gallery-image image-gallery-3"
-  />
+  <picture class="image-gallery-2">
+    <source
+      media="(min-width: 768px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg"
+    />
+    <source
+      media="(min-width: 1440px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
+    />
+    <img
+      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg"
+      alt="Image 2 of productxx99 mark two headphones"
+      class="product-image-gallery-image"
+    />
+  </picture>
+
+  <picture class="image-gallery-3">
+    <source
+      media="(min-width: 768px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg"
+    />
+    <source
+      media="(min-width: 1440px)"
+      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+    />
+    <img
+      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg"
+      alt="Image 3 of productxx99 mark two headphones"
+      class="product-image-gallery-image"
+    />
+  </picture>
 </div>
