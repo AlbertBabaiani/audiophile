@@ -14,6 +14,7 @@ export interface ProductModel {
   }[];
   price: number;
   quantity: number;
+  discount: number;
 }
 
 interface CategoryImage {
