@@ -17,7 +17,7 @@
           {{ product.description }}
         </p>
 
-        <a [routerLink]="product.category + '/' + product.slug" class="featured-product-button"
+        <a [routerLink]="['/', product.category, product.slug]" class="featured-product-button"
           >See Product</a
         >
       </div>

@@ -1,148 +1,146 @@
 <div class="go-back-btn-container">
   <button type="button" class="go-back-btn" (click)="goBack()">Go Back</button>
 </div>
-<section class="product-details-container">
-  <picture>
-    <source
-      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-product.jpg"
-      media="(min-width: 768px)"
-    />
-    <source
-      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-product.jpg"
-      media="(min-width: 1440px)"
-    />
-    <img
-      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-product.jpg"
-      alt="Image of XX99 Mark II Headphones"
-      class="product-image"
-    />
-  </picture>
 
-  <div class="product-details">
-    <span class="new-product-badge">NEW PRODUCT</span>
+@if (product(); as currentProduct) {
+  <section class="product-details-container">
+    <picture>
+      <source
+        [srcset]="currentProduct.image.tablet"
+        media="(min-width: 768px)"
+      />
+      <source
+        [srcset]="currentProduct.image.desktop"
+        media="(min-width: 1440px)"
+      />
+      <img
+        [src]="currentProduct.image.mobile"
+        [alt]="'Image of ' + currentProduct.name"
+        class="product-image"
+      />
+    </picture>
 
-    <h1>XX99 MARK II HEADPHONES</h1>
+    <div class="product-details">
+      @if (currentProduct.isNew) {
+        <span class="new-product-badge">NEW PRODUCT</span>
+      }
 
-    <p class="description">
-      The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium
-      headphone experience by reproducing the balanced depth and precision of studio-quality sound.
-    </p>
+      <h1>{{ currentProduct.name }}</h1>
 
-    <div class="price-container">
-      <p class="current-price discounted">{{ 2999 | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
-      <span class="new-price">{{ 1299 | currency: 'USD' : 'symbol' : '1.0-0' }}</span>
-    </div>
+      <p class="description">
+        {{ currentProduct.description }}
+      </p>
 
-    <div class="quantity-controls-and-add-cart">
-      <div class="quantity-controls">
-        <button type="button" class="decrement-btn quantity-btn">-</button>
-        <span class="quantity-display">1</span>
-        <button type="button" class="increment-btn quantity-btn">+</button>
+      <div class="price-container">
+        <p class="current-price" [class.discounted]="currentProduct.discount">
+          {{ currentProduct.price | currency: 'USD' : 'symbol' : '1.0-0' }}
+        </p>
+        @if (currentProduct.discount) {
+          <span class="new-price">{{
+            currentProduct.price * (1 - currentProduct.discount / 100)
+              | currency: 'USD' : 'symbol' : '1.0-0'
+          }}</span>
+        }
       </div>
 
-      <button type="button" class="add-to-cart-btn">ADD TO CART</button>
+      <div class="quantity-controls-and-add-cart">
+        <div class="quantity-controls">
+          <button
+            type="button"
+            class="decrement-btn quantity-btn"
+            [disabled]="currentQuantity() === 1"
+            (click)="decrementQuantity()"
+          >
+            -
+          </button>
+          <span class="quantity-display">{{ currentQuantity() }}</span>
+          <button
+            type="button"
+            class="increment-btn quantity-btn"
+            [disabled]="currentQuantity() >= currentProduct.quantity"
+            (click)="incrementQuantity()"
+          >
+            +
+          </button>
+        </div>
+
+        <button type="button" class="add-to-cart-btn">ADD TO CART</button>
+      </div>
     </div>
+  </section>
+
+  <div class="features-and-in-box-container">
+    <section class="features">
+      <h2>FEATURES</h2>
+      <p class="features-description">
+        {{ currentProduct.features }}
+      </p>
+    </section>
+
+    <section class="in-box">
+      <h2>IN THE BOX</h2>
+      <ul class="in-box-list">
+        @for (inc of currentProduct.includes; track inc.item) {
+          <li class="in-box-list-item">
+            <p class="in-box-list-item-quantity">{{ inc.quantity }}x</p>
+            <p class="in-box-list-item-name">{{ inc.item }}</p>
+          </li>
+        }
+      </ul>
+    </section>
   </div>
-</section>
 
-<div class="features-and-in-box-container">
-  <section class="features">
-    <h2>FEATURES</h2>
+  <div class="product-image-gallery">
+    <picture class="image-gallery-1">
+      <source
+        media="(min-width: 768px)"
+        [srcset]="currentProduct.gallery.first.tablet"
+      />
+      <source
+        media="(min-width: 1440px)"
+        [srcset]="currentProduct.gallery.first.desktop"
+      />
+      <img
+        [src]="currentProduct.gallery.first.mobile"
+        [alt]="'Image 1 of ' + currentProduct.name"
+        class="product-image-gallery-image"
+      />
+    </picture>
 
-    <p class="features-description">
-      Featuring a genuine leather head strap and premium earcups, these headphones deliver superior
-      comfort for those who like to enjoy endless listening. It includes intuitive controls designed
-      for any situation. Whether you're taking a business call or just in your own personal space,
-      the auto on/off and pause features ensure that you'll never miss a beat.
+    <picture class="image-gallery-2">
+      <source
+        media="(min-width: 768px)"
+        [srcset]="currentProduct.gallery.second.tablet"
+      />
+      <source
+        media="(min-width: 1440px)"
+        [srcset]="currentProduct.gallery.second.desktop"
+      />
+      <img
+        [src]="currentProduct.gallery.second.mobile"
+        [alt]="'Image 2 of ' + currentProduct.name"
+        class="product-image-gallery-image"
+      />
+    </picture>
 
-      <br /><br />
-
-      The advanced Active Noise Cancellation with built-in equalizer allow you to experience your
-      audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with
-      your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17
-      hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge
-      technology, and a modern design aesthetic.
-    </p>
-  </section>
-
-  <section class="in-box">
-    <h2>IN THE BOX</h2>
-
-    <ul class="in-box-list">
-      <li class="in-box-list-item">
-        <p class="in-box-list-item-quantity">2x</p>
-
-        <p class="in-box-list-item-name">USB-C Charging Cable</p>
-      </li>
-
-      <li class="in-box-list-item">
-        <p class="in-box-list-item-quantity">1x</p>
-
-        <p class="in-box-list-item-name">3.5mm Headphone Jack</p>
-      </li>
-
-      <li class="in-box-list-item">
-        <p class="in-box-list-item-quantity">1x</p>
-
-        <p class="in-box-list-item-name">Carrying Case</p>
-      </li>
-
-      <li class="in-box-list-item">
-        <p class="in-box-list-item-quantity">1x</p>
-
-        <p class="in-box-list-item-name">User Manual</p>
-      </li>
-    </ul>
-  </section>
-</div>
-
-<div class="product-image-gallery">
-  <picture class="image-gallery-1">
-    <source
-      media="(min-width: 768px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg"
-    />
-    <source
-      media="(min-width: 1440px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
-    />
-
-    <img
-      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg"
-      alt="Image 1 of productxx99 mark two headphones"
-      class="product-image-gallery-image"
-    />
-  </picture>
-
-  <picture class="image-gallery-2">
-    <source
-      media="(min-width: 768px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg"
-    />
-    <source
-      media="(min-width: 1440px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
-    />
-    <img
-      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg"
-      alt="Image 2 of productxx99 mark two headphones"
-      class="product-image-gallery-image"
-    />
-  </picture>
-
-  <picture class="image-gallery-3">
-    <source
-      media="(min-width: 768px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg"
-    />
-    <source
-      media="(min-width: 1440px)"
-      srcset="images/headphones/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
-    />
-    <img
-      src="images/headphones/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg"
-      alt="Image 3 of productxx99 mark two headphones"
-      class="product-image-gallery-image"
-    />
-  </picture>
-</div>
+    <picture class="image-gallery-3">
+      <source
+        media="(min-width: 768px)"
+        [srcset]="currentProduct.gallery.third.tablet"
+      />
+      <source
+        media="(min-width: 1440px)"
+        [srcset]="currentProduct.gallery.third.desktop"
+      />
+      <img
+        [src]="currentProduct.gallery.third.mobile"
+        [alt]="'Image 3 of ' + currentProduct.name"
+        class="product-image-gallery-image"
+      />
+    </picture>
+  </div>
+} @else {
+  <div class="loading-container">
+    <p>Loading product details...</p>
+  </div>
+}

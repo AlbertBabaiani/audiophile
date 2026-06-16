@@ -187,7 +187,7 @@ h1 {
 
   transition: $transition-normal;
 
-  &.disabled {
+  &:disabled {
     color: rgba($color-black, 0.25);
   }
 

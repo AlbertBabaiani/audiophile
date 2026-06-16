@@ -34,4 +34,8 @@ export class Products {
       console.error('Error fetching products from Firestore:', error);
     }
   }
+
+  getProductsBySlug(slug: string) {
+    return computed(() => this.allProducts().find((p) => p.slug === slug));
+  }
 }
