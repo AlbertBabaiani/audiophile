@@ -66,6 +66,11 @@ h1 {
 
 .subtitle {
   @include new-product-badge(rgba($color-white, 0.5));
+  margin-bottom: 1.6rem;
+
+  @media (min-width: #{$breakpoint-tablet}) {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .hero-description {
