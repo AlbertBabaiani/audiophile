@@ -5,3 +5,19 @@
   padding-inline: var(--px);
   padding-top: 1.6rem;
 }
+
+.new-product-badge {
+  @include new-product-badge;
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+h1 {
+  @include heading-lg;
+}
+
+.description {
+  @include body-md(rgba($color-black, 0.5));
+
+  margin-block: 2.4rem;
+}
