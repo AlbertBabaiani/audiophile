@@ -26,7 +26,7 @@
   border-radius: $radius-md;
 
   @media (min-width: #{$breakpoint-tablet}) {
-    height: clamp(30rem, 45vw, 58.8rem);
+    height: clamp(30rem, 45vw, 36rem);
   }
 
   @media (min-width: #{$breakpoint-desktop}) {
