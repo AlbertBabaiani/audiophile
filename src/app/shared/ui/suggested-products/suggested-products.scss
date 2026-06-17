@@ -1,0 +1,13 @@
+@use '../../../../styles/mixins' as *;
+@use '../../../../styles/variables' as *;
+
+section {
+  padding-inline: var(--px);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  text-align: center;
+}
+
+h2 {
+  @include heading-md;
+}

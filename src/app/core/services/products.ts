@@ -34,4 +34,28 @@ export class Products {
   getProductsBySlug(slug: string) {
     return computed(() => this.allProducts().find((p) => p.slug === slug));
   }
+
+  getSuggestedBroducts(slug?: string) {
+    return computed(() => {
+      let products = [...this.allProducts()];
+
+      if (slug) {
+        products = products.filter((p) => p.slug !== slug);
+      }
+
+      let currentIndex = products.length;
+
+      while (currentIndex != 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [products[currentIndex], products[randomIndex]] = [
+          products[randomIndex],
+          products[currentIndex],
+        ];
+      }
+
+      return products.slice(0, 3);
+    });
+  }
 }

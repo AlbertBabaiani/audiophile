@@ -45,6 +45,7 @@
 
 .featured-product-image {
   width: 100%;
+  background-color: $color-light-gray;
 
   img {
     width: 100%;
@@ -57,10 +58,12 @@
     @media (min-width: #{$breakpoint-tablet}) {
       max-width: unset;
       height: 35.2rem;
+      object-fit: contain;
     }
 
     @media (min-width: #{$breakpoint-desktop}) {
       height: 56rem;
+      object-fit: cover;
     }
   }
 

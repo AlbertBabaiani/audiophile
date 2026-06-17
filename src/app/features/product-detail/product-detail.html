@@ -5,14 +5,8 @@
 @if (product(); as currentProduct) {
   <section class="product-details-container">
     <picture>
-      <source
-        [srcset]="currentProduct.image.tablet"
-        media="(min-width: 768px)"
-      />
-      <source
-        [srcset]="currentProduct.image.desktop"
-        media="(min-width: 1440px)"
-      />
+      <source [srcset]="currentProduct.image.tablet" media="(min-width: 768px)" />
+      <source [srcset]="currentProduct.image.desktop" media="(min-width: 1440px)" />
       <img
         [src]="currentProduct.image.mobile"
         [alt]="'Image of ' + currentProduct.name"
@@ -92,14 +86,8 @@
 
   <div class="product-image-gallery">
     <picture class="image-gallery-1">
-      <source
-        media="(min-width: 768px)"
-        [srcset]="currentProduct.gallery.first.tablet"
-      />
-      <source
-        media="(min-width: 1440px)"
-        [srcset]="currentProduct.gallery.first.desktop"
-      />
+      <source media="(min-width: 768px)" [srcset]="currentProduct.gallery.first.tablet" />
+      <source media="(min-width: 1440px)" [srcset]="currentProduct.gallery.first.desktop" />
       <img
         [src]="currentProduct.gallery.first.mobile"
         [alt]="'Image 1 of ' + currentProduct.name"
@@ -108,14 +96,8 @@
     </picture>
 
     <picture class="image-gallery-2">
-      <source
-        media="(min-width: 768px)"
-        [srcset]="currentProduct.gallery.second.tablet"
-      />
-      <source
-        media="(min-width: 1440px)"
-        [srcset]="currentProduct.gallery.second.desktop"
-      />
+      <source media="(min-width: 768px)" [srcset]="currentProduct.gallery.second.tablet" />
+      <source media="(min-width: 1440px)" [srcset]="currentProduct.gallery.second.desktop" />
       <img
         [src]="currentProduct.gallery.second.mobile"
         [alt]="'Image 2 of ' + currentProduct.name"
@@ -124,14 +106,8 @@
     </picture>
 
     <picture class="image-gallery-3">
-      <source
-        media="(min-width: 768px)"
-        [srcset]="currentProduct.gallery.third.tablet"
-      />
-      <source
-        media="(min-width: 1440px)"
-        [srcset]="currentProduct.gallery.third.desktop"
-      />
+      <source media="(min-width: 768px)" [srcset]="currentProduct.gallery.third.tablet" />
+      <source media="(min-width: 1440px)" [srcset]="currentProduct.gallery.third.desktop" />
       <img
         [src]="currentProduct.gallery.third.mobile"
         [alt]="'Image 3 of ' + currentProduct.name"
@@ -139,6 +115,8 @@
       />
     </picture>
   </div>
+
+  <app-suggested-products [currentProductSlug]="currentProduct.slug" />
 } @else {
   <div class="loading-container">
     <p>Loading product details...</p>

@@ -1,10 +1,11 @@
 import { CurrencyPipe, Location } from '@angular/common';
 import { Component, computed, inject, input, signal } from '@angular/core';
 import { Products } from '../../core/services/products';
+import { SuggestedProducts } from '../../shared/ui/suggested-products/suggested-products';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, SuggestedProducts],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss',
 })
