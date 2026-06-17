@@ -1,0 +1,197 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+
+:host {
+  background-color: $color-black;
+}
+
+.header-container {
+  border-bottom: 1px solid rgba($color-white, 0.2);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+// Top Navigation
+
+.top-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+
+  height: 9rem;
+}
+
+.sandwitch-container {
+  display: block;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    display: none;
+    height: 9.7rem;
+  }
+}
+
+.sandwitch-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 2rem;
+  height: 1.5rem;
+  padding: 1.8rem var(--px);
+  box-sizing: content-box;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 2rem;
+    height: 0.3rem;
+    background-color: $color-white;
+    transition:
+      transform $transition-normal,
+      opacity $transition-normal;
+
+    &:first-child {
+      transform: translateY(-0.6rem);
+    }
+
+    &:last-child {
+      transform: translateY(0.6rem);
+    }
+  }
+
+  &.active {
+    span {
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.logo {
+  justify-self: center;
+  transition: $transition-normal;
+
+  &:focus-visible {
+    outline: 2px solid $color-orange;
+    outline-offset: 1rem;
+  }
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    justify-self: start;
+  }
+}
+
+.cart-container {
+  justify-self: end;
+}
+
+.cart-btn {
+  padding: 1.5rem var(--px);
+}
+
+.sandwitch-btn,
+.cart-btn {
+  background: transparent;
+  border: unset;
+  cursor: pointer;
+  transition: $transition-normal;
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-orange;
+  }
+}
+
+// Navigation
+
+.desktop-links {
+  justify-self: center;
+  display: none;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    display: block;
+  }
+}
+
+.desktop-links-list {
+  list-style: none;
+  display: flex;
+  gap: 3.4rem;
+
+  a {
+    text-decoration: none;
+    font-family: $font-family;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $color-white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: $transition-normal;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-orange;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-orange;
+      outline-offset: 1rem;
+    }
+  }
+}
+
+// Bottom Navigation
+
+.bottom-navigation {
+  background-color: $color-black;
+  padding-block: 2.4rem 3.6rem;
+}
+
+.bottom-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bottom-nav-link {
+  text-decoration: none;
+
+  font-family: $font-family;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: $color-white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: $transition-normal;
+
+  display: block;
+  padding: 1.3rem var(--px);
+
+  &:hover,
+  &:focus-visible {
+    color: $color-orange;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-orange;
+  }
+
+  &.active {
+    color: $color-orange;
+    background-color: $color-light-black;
+  }
+}

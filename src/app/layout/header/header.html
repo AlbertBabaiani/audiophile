@@ -1,0 +1,87 @@
+<div class="header-container">
+  <div class="top-navigation">
+    <div class="sandwitch-container">
+      <button
+        type="button"
+        class="sandwitch-btn"
+        [class.active]="navbarOpened()"
+        (click)="toggleNavbar()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <a routerLink="/" class="logo">
+      <img src="images/shared/desktop/logo.svg" alt="Audiophile logo" width="140" height="25" />
+    </a>
+
+    <nav class="desktop-links">
+      <ul class="desktop-links-list">
+        <li>
+          <a routerLink="/">HOME</a>
+        </li>
+        <li>
+          <a routerLink="/headphones">HEADPHONES</a>
+        </li>
+        <li>
+          <a routerLink="/speakers">SPEAKERS</a>
+        </li>
+        <li>
+          <a routerLink="/earphones">EARPHONES</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="cart-container">
+      <button type="button" class="cart-btn">
+        <img src="images/shared/desktop/icon-cart.svg" alt="Cart icon" width="31" height="25" />
+      </button>
+    </div>
+  </div>
+
+  <div class="bottom-navigation">
+    <nav class="bottom-nav">
+      <ul class="bottom-nav-list">
+        <li class="bottom-nav-item">
+          <a
+            routerLink="/"
+            class="bottom-nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >HOME</a
+          >
+        </li>
+        <li class="bottom-nav-item">
+          <a
+            routerLink="/headphones"
+            class="bottom-nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >HEADPHONES</a
+          >
+        </li>
+
+        <li class="bottom-nav-item">
+          <a
+            routerLink="/speakers"
+            class="bottom-nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >SPEAKERS</a
+          >
+        </li>
+        <li class="bottom-nav-item">
+          <a
+            routerLink="/earphones"
+            class="bottom-nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >EARPHONES</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
