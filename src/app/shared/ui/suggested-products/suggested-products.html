@@ -3,8 +3,8 @@
 
   <div class="suggested-products">
     @for (product of suggestedProducts(); track product.slug) {
-      <article class="suggested-product" [routerLink]="['/product', product.slug]">
-        <picture>
+      <article class="suggested-product">
+        <picture class="suggested-product-image">
           <source [srcset]="product.image.tablet" media="(min-width: 768px)" />
           <source [srcset]="product.image.desktop" media="(min-width: 1440px)" />
           <img [src]="product.image.mobile" [alt]="'Image of ' + product.name" />
@@ -12,7 +12,9 @@
 
         <h3>{{ product.name }}</h3>
 
-        <button type="button" class="view-product-btn">SEE PRODUCT</button>
+        <a [routerLink]="['/', product.category, product.slug]" class="view-product-btn"
+          >SEE PRODUCT</a
+        >
       </article>
     }
   </div>
