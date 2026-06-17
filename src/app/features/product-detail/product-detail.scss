@@ -189,6 +189,7 @@ h1 {
 
   &:disabled {
     color: rgba($color-black, 0.25);
+    cursor: not-allowed;
   }
 
   &:hover:not(:disabled),
