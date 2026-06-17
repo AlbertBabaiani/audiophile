@@ -35,7 +35,8 @@ export class Products {
     return computed(() => this.allProducts().find((p) => p.slug === slug));
   }
 
-  getSuggestedBroducts(slug?: string) {
+  getSuggestedProducts(slug?: string) {
+    console.log(slug);
     return computed(() => {
       let products = [...this.allProducts()];
 

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Products } from '../../../core/services/products';
 import { RouterLink } from '@angular/router';
 
@@ -13,5 +13,7 @@ export class SuggestedProducts {
 
   private productsService = inject(Products);
 
-  suggestedProducts = this.productsService.getSuggestedBroducts(this.currentProductSlug());
+  suggestedProducts = computed(() => {
+    return this.productsService.getSuggestedProducts(this.currentProductSlug())();
+  });
 }
