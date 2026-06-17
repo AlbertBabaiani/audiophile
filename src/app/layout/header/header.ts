@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -34,9 +34,26 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ],
 })
 export class Header {
+  private elementRef = inject(ElementRef);
+
   navbarOpened = signal(false);
 
   toggleNavbar() {
     this.navbarOpened.set(!this.navbarOpened());
+  }
+
+  closeNavbar() {
+    this.navbarOpened.set(false);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.navbarOpened()) {
+      return;
+    }
+    const clickedInside = this.elementRef.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.navbarOpened.set(false);
+    }
   }
 }

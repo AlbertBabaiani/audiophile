@@ -44,7 +44,7 @@
   @if (navbarOpened()) {
     <div class="bottom-navigation" @expandCollapse>
       <nav class="bottom-nav">
-        <ul class="bottom-nav-list">
+        <ul class="bottom-nav-list" (click)="closeNavbar()">
           <li class="bottom-nav-item">
             <a
               routerLink="/"
