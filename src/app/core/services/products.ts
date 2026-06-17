@@ -15,10 +15,6 @@ export class Products {
 
   allProducts = computed(() => [...this.headphones(), ...this.speakers(), ...this.earphones()]);
 
-  constructor() {
-    this.fetchProducts();
-  }
-
   async fetchProducts(): Promise<void> {
     try {
       const querySnapshot = await getDocs(collection(this.db, 'products'));
