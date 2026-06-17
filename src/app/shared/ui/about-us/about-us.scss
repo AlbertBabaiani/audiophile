@@ -50,9 +50,11 @@ picture {
   gap: 3.2rem;
 
   margin-top: 4rem;
+  padding-inline: var(--px);
 
   @media (min-width: #{$breakpoint-tablet}) {
     margin-top: 6.3rem;
+    padding-inline: 0;
   }
 
   @media (min-width: #{$breakpoint-desktop}) {
