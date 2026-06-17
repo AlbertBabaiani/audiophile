@@ -14,7 +14,7 @@ export class Home {
     title: 'XX99 Mark II HeadphoneS',
     description:
       'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.',
-    link: 'earphones/xx99',
+    link: 'earphones/xx99-mark-two-headphones',
 
     thumbnailUrls: {
       mobile: 'images/home/mobile/image-header.jpg',
@@ -33,7 +33,7 @@ export class Home {
         tablet: 'images/home/tablet/image-speaker-zx9.png',
         desktop: 'images/home/desktop/image-speaker-zx9.png',
       },
-      link: '/speakers/zx9',
+      link: '/speakers/zx9-speaker',
     },
     zx7: {
       title: `ZX7 SPEAKER`,
@@ -42,7 +42,7 @@ export class Home {
         tablet: 'images/home/tablet/image-speaker-zx7.jpg',
         desktop: 'images/home/desktop/image-speaker-zx7.jpg',
       },
-      link: '/speakers/zx7',
+      link: '/speakers/zx7-speaker',
     },
     yx1: {
       title: `YX1 EARPHONES`,
@@ -51,7 +51,7 @@ export class Home {
         tablet: 'images/home/tablet/image-earphones-yx1.jpg',
         desktop: 'images/home/desktop/image-earphones-yx1.jpg',
       },
-      link: '/earphones/yx1',
+      link: '/earphones/yx1-earphones',
     },
   });
 }
