@@ -158,6 +158,12 @@
 .bottom-navigation {
   background-color: $color-black;
   padding-block: 2.4rem 3.6rem;
+
+  display: block;
+
+  @media (min-width: #{$breakpoint-desktop}) {
+    display: none;
+  }
 }
 
 .bottom-nav-list {

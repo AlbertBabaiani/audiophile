@@ -5,6 +5,7 @@ import {
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
 import { Products } from './core/services/products';
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions(),
       withComponentInputBinding(),
     ),
+    provideAnimationsAsync(),
     provideAppInitializer(() => {
       const productsService = inject(Products);
       return productsService.fetchProducts();
