@@ -11,7 +11,7 @@
   align-items: center;
 
   text-align: center;
-  padding: 5.2rem var(--px);
+  padding: 5.2rem 8rem;
   max-width: var(--max-width);
   margin-inline: auto;
 
@@ -29,7 +29,7 @@
   }
 
   @media (min-width: #{$breakpoint-tablet}) {
-    padding-block: 6rem;
+    padding: 6rem var(--px);
     text-align: start;
     align-items: start;
     gap: unset;
