@@ -23,6 +23,8 @@ export class Products {
         products.push(doc.data() as ProductModel);
       });
 
+      products.sort((a, b) => (a.isNew === b.isNew ? 0 : a.isNew ? -1 : 1));
+
       this.headphones.set(products.filter((p) => p.category === 'headphones'));
       this.speakers.set(products.filter((p) => p.category === 'speakers'));
       this.earphones.set(products.filter((p) => p.category === 'earphones'));
@@ -36,7 +38,6 @@ export class Products {
   }
 
   getSuggestedProducts(slug?: string) {
-    console.log(slug);
     return computed(() => {
       let products = [...this.allProducts()];
 
