@@ -258,6 +258,7 @@ h1 {
 
 .features-description {
   @include body-md(rgba($color-black, 0.5));
+  white-space: pre-line;
 }
 
 // In box
