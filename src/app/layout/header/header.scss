@@ -81,6 +81,7 @@
 .logo {
   justify-self: center;
   transition: $transition-normal;
+  display: flex;
 
   &:focus-visible {
     outline: 2px solid $color-orange;
